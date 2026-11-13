@@ -8,12 +8,4 @@
 ## Ajouter le document technique
 
 Le document technique « CADSurfaceAnalyser : fonctionnement du code, équations et
-références » a été rédigé dans Claude (Claude Docs). Pour l'ajouter au dépôt :
-
-1. ouvrir le document dans Claude ;
-2. l'exporter au format **Markdown** (les équations y sont en texte brut, dans des
-   blocs de code, donc lisibles sur GitHub) ;
-3. le renommer `FONCTIONNEMENT.md` et le placer dans ce dossier ;
-4. y ajouter un lien dans le tableau ci-dessus et dans le README principal.
-
-Une version PDF ou Word peut aussi être exportée et placée ici (`FONCTIONNEMENT.pdf`).
+références » est disponible ici : [CADSurfaceAnalyser](https://github.com/Guillaume-COHEN/cadsurfaceanalyser/blob/main/docs/CADSurfaceAnalyser.pdf)
