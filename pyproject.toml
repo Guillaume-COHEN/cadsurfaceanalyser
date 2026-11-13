@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadsurfaceanalyser"
+version = "11.8.0"
+description = "Analyse des surfaces d'un fichier STEP AP214 : groupes tangents, familles de faces, aires, STEP colorés, JSON et CSV (sans OpenCASCADE)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [{name = "Guillaume COHEN"}]
+keywords = ["STEP", "AP214", "ISO 10303", "B-Rep", "CAD", "NURBS", "B-spline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+numpy = ["numpy>=1.20"]
+
+[project.urls]
+Homepage = "https://github.com/Guillaume-COHEN/cadsurfaceanalyser"
+Issues = "https://github.com/Guillaume-COHEN/cadsurfaceanalyser/issues"
+Changelog = "https://github.com/Guillaume-COHEN/cadsurfaceanalyser/blob/main/CHANGELOG.md"
+
+[project.scripts]
+cadsurface = "CADSurfaceAnalyser:main"
+cadsurface-profil = "CADSurfaceProfil:main"
+
+[project.gui-scripts]
+cadsurface-gui = "cadsurf.interface:lancer_interface"
+
+[tool.setuptools]
+packages = ["cadsurf"]
+py-modules = ["CADSurfaceAnalyser", "CADSurfaceProfil", "CADSurfaceGUI"]
+license-files = ["LICENSE", "NOTICE"]

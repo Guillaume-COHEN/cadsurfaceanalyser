@@ -1,0 +1,54 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Python ${{ matrix.python-version }} · ${{ matrix.os }} · numpy ${{ matrix.numpy }}
+    runs-on: ${{ matrix.os }}
+    # Windows : non bloquant tant que la suite n'a pas été vue au vert sur ce système
+    # (elle a été validée sous Linux). Retirer cette ligne une fois les jobs Windows verts.
+    continue-on-error: ${{ matrix.os == 'windows-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.9", "3.12"]
+        numpy: ["avec", "sans"]
+        include:
+          - os: ubuntu-22.04
+            python-version: "3.8"
+            numpy: "sans"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Installer numpy
+        if: matrix.numpy == 'avec'
+        run: python -m pip install numpy
+      - name: Tests
+        run: python -m unittest discover -s tests -v
+
+  paquet:
+    name: Construction et installation du paquet
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Construire
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Installer et essayer
+        run: |
+          python -m pip install dist/*.whl
+          cadsurface --help

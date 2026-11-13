@@ -1,0 +1,4 @@
+# Aucune dépendance n'est obligatoire : le programme fonctionne en Python pur.
+# numpy est optionnel mais recommandé : il accélère le calcul des faces à surface
+# B-spline, de révolution ou d'extrusion (environ 3 à 4 fois).
+numpy>=1.20

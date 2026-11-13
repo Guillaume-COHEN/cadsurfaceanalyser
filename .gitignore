@@ -1,0 +1,33 @@
+# --- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Éditeurs et systèmes
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Fichiers générés par le programme à côté des STEP de test
+# (les STEP d'entrée eux-mêmes restent suivis)
+data/stp_tests/*_Groupe_*.stp
+data/stp_tests/*_bspline_violet.stp
+data/stp_tests/*_groupes_tangents.json
+data/stp_tests/*_groupes_tangents.csv
+data/stp_tests/*_groupes.csv
+data/stp_tests/*_faces.csv
+data/stp_tests/*_familles.csv
+
+# --- Dossiers de résultats usuels
+sorties/
+resultats/

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce logiciel, merci de le citer comme ci-dessous."
+title: "CADSurfaceAnalyser"
+abstract: >-
+  Analyse des surfaces d'un fichier STEP AP214 sans OpenCASCADE : groupes de faces
+  tangentes, aires et barycentres, familles de faces, exports STEP colorés, JSON et CSV.
+type: software
+version: 11.8.0
+license: Apache-2.0
+repository-code: "https://github.com/Guillaume-COHEN/cadsurfaceanalyser"
+authors:
+  - name: "Guillaume COHEN"
+keywords:
+  - STEP
+  - AP214
+  - B-Rep
+  - NURBS
